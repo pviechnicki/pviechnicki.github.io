@@ -1,4 +1,42 @@
-<h1>Test</h1>
-<h2>Test H2</h2>
-<h3>Test 3</h3>
-<p>Paragraph
+<!doctype html>
+<html>
+
+<head>
+
+<title>D3Plus</title>
+
+<script src="https://d3plus.org/js/d3plus.full.min.js"></script>
+
+<style>
+.greendot {
+color: green;
+}
+}
+</style>
+</head>
+<body>
+<h1>Hello World<span class="greendot">.</span></h1>
+<div id="myDiv"</div>
+</body>
+
+<script>
+var data= [
+{"name": "Dave", "value": 75},
+{"name": "Alex", "value": 25},
+{"name": "Jen", "value": 13},
+{"name": "Frank", "value": 12}
+];
+
+var myViz = d3plus.viz()
+  .container("#myDiv")
+  .type("tree_map")
+  .data(data)
+  .id("name")
+  .size("value")
+  .color("value")
+  .draw();
+
+console.log("this is our data", data)
+</script>
+
+</html>
