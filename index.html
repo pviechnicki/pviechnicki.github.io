@@ -1,42 +1,296 @@
-<!doctype html>
-<html>
+---
+layout: default
+title: Home
+description: Welcome to my personal website
+---
 
-<head>
+<div class="hero">
+    <div class="container">
+        <p class="hero-tagline">{{ site.description }}</p>
+    </div>
+</div>
 
-<title>D3Plus</title>
+<div class="page-layout">
+    <aside class="sidebar-nav">
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#academic-employment">Academic Employment</a></li>
+                <li><a href="#private-employment">Private &amp; Government Employment</a></li>
+                <li><a href="#special-assignments">Special Assignments</a></li>
+                <li><a href="#software-data">Software &amp; Data</a></li>
+                <li><a href="#external-funding">Funding</a></li>
+                <li><a href="#honors">Honors</a></li>
+                <li><a href="#publications">Publications</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#links">Links</a></li>
+            </ul>
+        </nav>
+    </aside>
 
-<script src="https://d3plus.org/js/d3plus.full.min.js"></script>
+    <div class="content-area">
+    <section id="about">
+        <h2>About Me</h2>
+        <p>{{ site.author.bio | default: "Welcome to my personal website. I'm passionate about technology, design, and creating meaningful experiences." }}</p>
+        {% if site.author.location %}
+        <p><strong>Location:</strong> {{ site.author.location }}</p>
+        {% endif %}
+    </section>
 
-<style>
-.greendot {
-color: green;
-}
-}
-</style>
-</head>
-<body>
-<h1>Hello World<span class="greendot">.</span></h1>
-<div id="myDiv"</div>
-</body>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="education-entry">
+            <h3>University of Chicago, Chicago, Illinois</h3>
+            <p><strong>Ph.D. Linguistics,</strong> cum laude (2002)</p>
+            <p><strong>Major Field:</strong> Phonetics &nbsp;|&nbsp; <strong>Minor Field:</strong> Phonology</p>
+            <p><strong>Thesis:</strong> “Composition and Granularity of Vowel Production Targets.”</p>
+            <p><strong>Committee:</strong> Howard Nusbaum (chair), Karen Landahl, Ken de Jong</p>
+        </div>
+        <div class="education-entry">
+            <h3>Princeton University, Princeton, New Jersey</h3>
+            <p><strong>B.A. Classics and Linguistics</strong> (1992)</p>
+            <p>Class of 1992 Salutatorian</p>
+        </div>
+    </section>
 
-<script>
-var data= [
-{"name": "Dave", "value": 75},
-{"name": "Alex", "value": 25},
-{"name": "Jen", "value": 13},
-{"name": "Frank", "value": 12}
-];
+    <section id="academic-employment">
+        <h2>Academic Employment History</h2>
+        <div class="history-entry">
+            <h3>Director, Human Language Technology Center of Excellence</h3>
+            <p><strong>Institution:</strong> Johns Hopkins University</p>
+            <p><strong>Years:</strong> 2020–2025</p>
+            <p>Non-departmental appointment as senior staff reporting to Executive Vice Provost Gange.</p>
+        </div>
+        <div class="history-entry">
+            <h3>Director, WSE-Human Language Technology Center of Excellence</h3>
+            <p><strong>Institution:</strong> Johns Hopkins University</p>
+            <p><strong>Years:</strong> 2025–Present</p>
+            <p>Non-departmental appointment as Research Scientist reporting to WSE Dean Schlesinger.</p>
+        </div>
+    </section>
 
-var myViz = d3plus.viz()
-  .container("#myDiv")
-  .type("tree_map")
-  .data(data)
-  .id("name")
-  .size("value")
-  .color("value")
-  .draw();
+    <section id="private-employment">
+        <h2>Private Sector and Government Employment</h2>
+        <div class="career-entry">
+            <h3>Member, Maryland Responsible AI Council (MRAC)</h3>
+            <p><strong>Years:</strong> 2024–Present</p>
+            <p>Advises the State of Maryland Governor’s Office and key departments on AI policy decisions and procurement.</p>
+            <p>Co-chair of the Public Sector MRAC Committee.</p>
+        </div>
+        <div class="career-entry">
+            <h3>Specialist Leader, Deloitte Consulting</h3>
+            <p><strong>Years:</strong> 2019–2020</p>
+            <ul>
+                <li>Co-led natural language processing sales and solutioning for Government and Public Sector.</li>
+                <li>Mentored and coached project teams of junior practitioners in data science techniques.</li>
+            </ul>
+        </div>
+        <div class="career-entry">
+            <h3>Analytics Manager, Deloitte Consulting</h3>
+            <p><strong>Years:</strong> 2017–2019</p>
+            <ul>
+                <li>Led teams of data scientists, data engineers, and cloud architects to deliver insights to government clients.</li>
+                <li>Directed junior staff on implementation of machine learning solutions.</li>
+                <li>Built predictive models to help clients lower operating costs of key business processes.</li>
+                <li>Developed analytics platform to help a state government combat the opioids epidemic through data.</li>
+                <li>Led successful business development efforts including an $11.5M plus-up.</li>
+            </ul>
+        </div>
+        <div class="career-entry">
+            <h3>Chief Data Scientist, Deloitte Center for Government Insights</h3>
+            <p><strong>Years:</strong> 2014–2017</p>
+            <ul>
+                <li>Delivered analytic insights for Deloitte’s Federal and Public Sector practices.</li>
+                <li>Authored highly rated Mission Analytics studies.</li>
+                <li>Directed quantitative research for the AI in Government campaign.</li>
+                <li>Developed impactful dashboards and data portals, including DataUSA.</li>
+            </ul>
+        </div>
+        <div class="career-entry">
+            <h3>Counterterrorism Analyst &amp; Executive Assistant, National Counterterrorism Center</h3>
+            <p><strong>Years:</strong> 2010–2014</p>
+            <ul>
+                <li>Conducted national-level all-source assessments of terrorism trends.</li>
+                <li>Developed and applied new methodologies for quantitative geospatial analysis of terrorism.</li>
+                <li>Briefed research results to customers at the highest levels of government.</li>
+                <li>Managed NCTC responses to Congress, the White House, and foreign partners.</li>
+            </ul>
+        </div>
+        <div class="career-entry">
+            <h3>Regional Analyst &amp; Branch Chief, National Geospatial-Intelligence Agency</h3>
+            <p><strong>Years:</strong> 2004–2010</p>
+            <ul>
+                <li>Supervised ten direct reports in the Innovation and Technology Branch.</li>
+                <li>Proposed, directed, and published innovative research methods in human terrain analysis.</li>
+                <li>Served as project manager for R&amp;D contracts on geospatial and text analysis technology.</li>
+            </ul>
+        </div>
+    </section>
 
-console.log("this is our data", data)
-</script>
+    <section id="special-assignments">
+        <h2>Private Sector and Government Special Assignments</h2>
+        <div class="assignment-entry">
+            <h3>Technology Mentor, DCODE.io Government Emerging Technology Accelerator</h3>
+            <p><strong>Years:</strong> 2017–2022</p>
+            <p>Coached CEOs and CFOs of tech startups on how to adapt their offerings to government needs.</p>
+        </div>
+        <div class="assignment-entry">
+            <h3>Geography Mentor, Afghanistan Geography and Cartography Head Office, Kabul</h3>
+            <p><strong>Year:</strong> 2009</p>
+            <p>Taught Afghan civil servants basic digital cartography to build indigenous capacity.</p>
+        </div>
+        <div class="assignment-entry">
+            <h3>Co-Chair, Director of National Intelligence’s Language Technology Experts Group</h3>
+            <p><strong>Years:</strong> 2007–2008</p>
+            <p>Convened subject matter experts in foreign language technology and managed interagency collaboration opportunities.</p>
+        </div>
+        <div class="assignment-entry">
+            <h3>Staff, United States Board on Geographic Names</h3>
+            <p><strong>Years:</strong> 2004–2010</p>
+            <p>Developed and implemented national and international policies for geographic name standardization.</p>
+        </div>
+    </section>
 
-</html>
+    <section id="software-data">
+        <h2>Software and Data</h2>
+        <div class="software-entry">
+            <h3><a href="https://datausa.io" target="_blank" rel="noopener">DataUSA</a></h3>
+            <p>Advanced data visualization platform from the Deloitte Center for Government Insights and DataWheel, Inc.</p>
+        </div>
+        <div class="software-entry">
+            <h3>Geonames Server</h3>
+            <p>The definitive catalogue of foreign place name spellings and metadata for use by the United States Government, produced by the United States Board on Geographic Names.</p>
+        </div>
+        <div class="software-entry">
+            <h3><a href="https://huggingface.co/datasets/pviechnicki/ParaBLoCC" target="_blank" rel="noopener">ParaBLoCC: Parallel Basic Locative Constructions Corpus</a></h3>
+            <p>Public dataset hosted on Hugging Face.</p>
+        </div>
+    </section>
+
+    <section id="external-funding">
+        <h2>External Funding</h2>
+        <div class="funding-entry">
+            <h3>Human Language Technology Center of Excellence Core Program Award</h3>
+            <p>Multi-year, multi-million dollar annually renewed academic center grant.</p>
+            <p><strong>Years:</strong> 2020–2026</p>
+        </div>
+        <div class="funding-entry">
+            <h3>National AI Research Resource Pilot Grant</h3>
+            <p>“Advancing Scientific Discovery through Multilingual Summarization at SCALE 2025” (NAIRR250176)</p>
+            <p><strong>Amount:</strong> $214,000</p>
+            <p><strong>Years:</strong> 2025–2026</p>
+        </div>
+    </section>
+
+    <section id="honors">
+        <h2>Honors</h2>
+        <div class="honors-entry">
+            <h3>Best Presentation Award</h3>
+            <p>International Conference on Speech and Language Processing (ICSLP)</p>
+            <p><strong>Year:</strong> 2025</p>
+        </div>
+        <div class="honors-entry">
+            <h3>National Intelligence Council Distinguished Analysis Award</h3>
+            <p><strong>Year:</strong> 2014</p>
+        </div>
+        <div class="honors-entry">
+            <h3>CIA Career Analyst Program, Distinguished Briefer Award</h3>
+            <p><strong>Year:</strong> 2012</p>
+        </div>
+        <div class="honors-entry">
+            <h3>NGA Joint Civilian Service Award</h3>
+            <p>Recognized for deployment to Afghanistan</p>
+            <p><strong>Year:</strong> 2009</p>
+        </div>
+        <div class="honors-entry">
+            <h3>Secretary of Defense Medal for the Global War on Terrorism</h3>
+            <p><strong>Year:</strong> 2009</p>
+        </div>
+        <div class="honors-entry">
+            <h3>Pat Roberts Intelligence Scholarship Program Recipient</h3>
+            <p><strong>Year:</strong> 2004</p>
+        </div>
+        <div class="honors-entry">
+            <h3>University of Chicago</h3>
+            <p>Graduated cum laude</p>
+            <p><strong>Year:</strong> 2002</p>
+        </div>
+        <div class="honors-entry">
+            <h3>Salutatorian</h3>
+            <p>Princeton University</p>
+            <p><strong>Year:</strong> 1992</p>
+        </div>
+    </section>
+
+    <section id="publications">
+        <h2>Publications</h2>
+        <div class="publication-entry">
+            <p>Thomas Thebaud, Yen-Ju Lu, Matthew Wiesner, <strong>Peter Viechnicki</strong>, and Najim Dehak. (2025, in press). “Enhancing Dialogue Annotation with Speaker Characteristics Leveraging a Frozen LLM.” <em>Automatic Speech Recognition and Understanding Workshop (ASRU 2025)</em>.</p>
+        </div>
+        <div class="publication-entry">
+            <p>Tong Qi, Vera Andersson, <strong>Peter Viechnicki</strong>, Vince Lyzinski. (2025, in press). “Asymptotically perfect seeded graph matching without edge correlation (and applications to inference).” <a href="https://arxiv.org/abs/2506.02825" target="_blank" rel="noopener">arXiv:2506.02825</a>.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>, Alexandra Eberstadt, and Barbara Landau. (2025). “Spatial Terms in English plus Twelve Languages: Evidence for Functional and Geometric Classes.” <em>Proceedings of the Annual Meeting of the Cognitive Science Society</em>, 47.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>. (2025). “Measurement of the Granularity of Vowel Production Space by Just Producible Difference (JPD) Limens.” <em>ICSLP 2025</em>. (Best presentation award).</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong> and Anthony Kostacos. (2025). “ParaBLoCC: Parallel Basic Locative Constructions Corpus.” <em>NAACL 2025 Proceedings of the Workshop on Cognitive Modeling and Computational Linguistics</em>. Albuquerque, New Mexico, USA.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>, Kevin Duh, Anthony Kostacos, and Barbara Landau. (2024). “Large-Scale Bitext Corpora Provide New Evidence for Cognitive Representations of Spatial Terms.” <em>Proceedings of the 18th Conference of the European Chapter of the Association for Computational Linguistics (Volume 1: Long Papers)</em>, St. Julian’s, Malta.</p>
+        </div>
+        <div class="publication-entry">
+            <p>William Eggers, David Schatzky, and <strong>Peter Viechnicki</strong>. (2017). “AI-Augmented Government: Using Cognitive Technologies to Redesign Public Sector Work.” Deloitte University Press.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>. (2015). “Understanding Millennials in Government: Debunking Myths about our Youngest Public Servants.” Deloitte University Press.</p>
+        </div>
+        <div class="publication-entry">
+            <p>Vivek Seghal, <strong>Peter Viechnicki</strong>, and Lise Getoor. (2006). “Entity Resolution in Geospatial Data Integration.” <em>GIS '06: Proceedings of the 14th annual ACM international symposium on Advances in geographic information systems</em>.</p>
+        </div>
+        <div class="publication-entry">
+            <p>Ken Rasinski, <strong>Peter Viechnicki</strong>, and Colm O'Muircheartaigh. (2005). “Methods for Studying Stigma and Mental Illness.” In P. W. Corrigan (Ed.), <em>On the stigma of mental illness: Practical strategies for research and social change</em> (pp. 45–65). American Psychological Association.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>. (2003). “Composition and Granularity of Vowel Production Targets.” University of Chicago, Ph.D. Dissertation.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>. (2001). “Properties and Availability of the Union Army Life-Cycle Sample.” National Bureau of Economic Research. <a href="https://www.nber.org/system/files/chapters/c9638/c9638.pdf" target="_blank" rel="noopener">NBER Report</a>.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>. (1998). “A Performance Evaluation of Automatic Survey Classifiers.” In: Honavar V., Slutzki G. (eds) <em>Grammatical Inference. ICGI 1998</em>. Lecture Notes in Computer Science, vol 1433. Springer, Berlin, Heidelberg.</p>
+        </div>
+        <div class="publication-entry">
+            <p><strong>Peter Viechnicki</strong>. (1996). “The Problem of Voiced Stops in Modern Greek: A Non-linear Approach.” <em>Studies in Greek Linguistics</em>, 16, 59–70.</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get in Touch</h2>
+        <p>Feel free to reach out if you'd like to collaborate or just say hello!</p>
+        {% if site.email %}
+        <p><strong>Email:</strong> <a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        {% endif %}
+    </section>
+
+    <section id="links">
+        <h2>Links</h2>
+        <div class="links-entry">
+            <h3><a href="https://hltcoe.jhu.edu/" target="_blank" rel="noopener">Human Language Technology Center of Excellence</a></h3>
+            <p>Research center at Johns Hopkins University focusing on advanced human language technology, including the yearly SCALE program and collaborative research initiatives.</p>
+        </div>
+        <div class="links-entry">
+            <h3><a href="https://www.deloitte.com/us/en/insights/research-centers/center-for-government-insights.html" target="_blank" rel="noopener">Deloitte Center for Government Insights</a></h3>
+            <p>Publishes research that helps government leaders understand emerging trends, policy innovations, and technology-driven opportunities.</p>
+        </div>
+        <div class="links-entry">
+            <h3><a href="https://www.usgs.gov/us-board-on-geographic-names" target="_blank" rel="noopener">U.S. Board on Geographic Names</a></h3>
+            <p>Federal body that standardizes geographic names across the United States, providing authoritative spellings and metadata for maps and official use.</p>
+        </div>
+    </section>
+    </div>
+</div>
